@@ -13,13 +13,13 @@ public class LogicaDePies : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
         
-         Debug.Log("stay");
+        // Debug.Log("stay");
          playerController.puedoSaltar = true;
          
     }
     private void OnTriggerExit(Collider other)
     {
-        Debug.Log("exit");
+      //  Debug.Log("exit");
         playerController.puedoSaltar=false;
     }
 }
