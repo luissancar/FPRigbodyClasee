@@ -32,6 +32,13 @@ public class PlayerController : MonoBehaviour
     public bool avanzoSolo;
     public float impulsoGolpe = 10f;
 
+    // Correr
+    public float velCorrer = 10f;
+
+
+    // armas
+    public bool conArma;
+
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -44,6 +51,8 @@ public class PlayerController : MonoBehaviour
         velocidaInicial = velocidadMovimiento;
         velocidadAgachado = velocidadMovimiento * 0.5f;
         //
+
+
     }
 
     private void FixedUpdate()
@@ -63,6 +72,11 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Correr
+        Correr();
+
+
+
         // leemos cursores
         x = Input.GetAxis("Horizontal");
         y = Input.GetAxis("Vertical");
@@ -83,6 +97,33 @@ public class PlayerController : MonoBehaviour
         // Salto
         Saltar();
         Agachado();
+
+    }
+
+    private void Correr()
+    {
+        if (Input.GetKey(KeyCode.LeftShift) && puedoSaltar && !estoyAtacando)
+        {
+            velocidadMovimiento = velCorrer;
+            if (y > 0)
+            {
+                anim.SetBool("Correr", true);
+            }
+            else
+            {
+                anim.SetBool("Correr", false);
+                if (puedoSaltar)
+                {
+                    velocidadMovimiento = velocidaInicial;
+                }
+            }
+        }
+        else
+        {
+            anim.SetBool("Correr", false);
+            velocidadMovimiento = velocidaInicial;
+
+        }
 
     }
 
