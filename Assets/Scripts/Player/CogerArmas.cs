@@ -69,14 +69,23 @@ public class CogerArmas : MonoBehaviour
 
     public void ActivarBoxColliderArmas()
     {
-        for (int i = 0; i < armasBoxCollider.Length; i++)
+        if (player.conArma)
         {
-            if (armasBoxCollider[i] != null)
+            for (int i = 0; i < armasBoxCollider.Length; i++)
             {
-                armasBoxCollider[i].enabled = true;
+                if (armasBoxCollider[i] != null)
+                {
+                    armasBoxCollider[i].enabled = true;
+                }
             }
+            punoBoxColliders.enabled = false;
         }
-        punoBoxColliders.enabled = true;
+        else
+        {
+            DesactivarBoxColliderArmas();
+            punoBoxColliders.enabled = true;
+        }
+            
     }
 
 }

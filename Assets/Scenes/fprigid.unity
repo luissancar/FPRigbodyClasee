@@ -1133,7 +1133,7 @@ BoxCollider:
   m_GameObject: {fileID: 408784967}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.32876846, y: 1.1416584, z: 0.2592943}
   m_Center: {x: 0.00000062094745, y: -0.6775133, z: -0.023482699}
@@ -1229,6 +1229,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   armasBoxCollider:
+  - {fileID: 989580568}
   - {fileID: 408784969}
   punoBoxColliders: {fileID: 742926856}
   armas:
@@ -1783,7 +1784,7 @@ BoxCollider:
   m_GameObject: {fileID: 148937605}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.3801239, y: 0.3691931, z: 0.30996302}
   m_Center: {x: 0.19023918, y: -0.108466916, z: 0.026618266}
@@ -2299,7 +2300,7 @@ BoxCollider:
   m_GameObject: {fileID: 989580562}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.32876885, y: 1.1239591, z: 0.20338595}
   m_Center: {x: 0.0000055955106, y: -0.65546465, z: 0.007649212}
