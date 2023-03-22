@@ -7,19 +7,29 @@ public class CogerArmas : MonoBehaviour
 {
 
 
+    public BoxCollider[] armasBoxCollider;
+    public BoxCollider punoBoxColliders;
+
+    
+
+
     public GameObject[] armas;
 
     public PlayerController player;
     // Start is called before the first frame update
     void Start()
     {
-        //DesactivarBoxcolliderArmas();
+        DesactivarBoxColliderArmas();
     }
 
 
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            DesactivarArmas();
+        }
         
     }
 
@@ -44,5 +54,29 @@ public class CogerArmas : MonoBehaviour
 
     }
 
-    
+   public void DesactivarBoxColliderArmas()
+    {
+        for (int i = 0; i < armasBoxCollider.Length; i++)
+        {
+            if (armasBoxCollider[i] != null)
+            {
+                armasBoxCollider[i].enabled = false;
+            }
+        }
+        punoBoxColliders.enabled = false;
+    }
+
+
+    public void ActivarBoxColliderArmas()
+    {
+        for (int i = 0; i < armasBoxCollider.Length; i++)
+        {
+            if (armasBoxCollider[i] != null)
+            {
+                armasBoxCollider[i].enabled = true;
+            }
+        }
+        punoBoxColliders.enabled = true;
+    }
+
 }

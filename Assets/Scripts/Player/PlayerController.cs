@@ -84,8 +84,18 @@ public class PlayerController : MonoBehaviour
         // Golpeo
         if (Input.GetKeyDown(KeyCode.Return) && puedoSaltar && !estoyAtacando)
         {
-            anim.SetTrigger("Golpeoo");
-            estoyAtacando = true;
+            if (conArma)
+            {
+
+                anim.SetTrigger("Golpeo2");
+                estoyAtacando = true;
+            }
+            else
+            {
+
+                anim.SetTrigger("Golpeoo");
+                estoyAtacando = true;
+            }
         }
         //
 
